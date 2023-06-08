@@ -129,11 +129,11 @@ public class GameManager : MonoBehaviour
 
     public void ResterGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void Quit()
     {
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
 }
