@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class CupManager : MonoBehaviour
 {
@@ -32,23 +33,26 @@ public class CupManager : MonoBehaviour
         {
             if (CupRed && ball.Red)
             {
+                ScorePoint.SetActive(true);
                 gameManager.score++;
             }
             else if (CupBlue && ball.Bleu)
             {
+                ScorePoint.SetActive(true);
                 gameManager.score++;
             }
             else if (CupGreen && ball.Green)
             {
+                ScorePoint.SetActive(true);
                 gameManager.score++;
             }
             else
             {
                 gameManager.score--;
+                ScorePoint.SetActive(true);
+                CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, .1f);
             }
         }
-
-        ScorePoint.SetActive(true);
         gameManager.PlayerActive = false;
         Destroy(collision.gameObject);
     }
