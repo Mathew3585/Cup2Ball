@@ -33,16 +33,19 @@ public class CupManager : MonoBehaviour
         {
             if (CupRed && ball.Red)
             {
+                gameManager.PlaySoundFx();
                 ScorePoint.SetActive(true);
                 gameManager.score++;
             }
             else if (CupBlue && ball.Bleu)
             {
+                gameManager.PlaySoundFx();
                 ScorePoint.SetActive(true);
                 gameManager.score++;
             }
             else if (CupGreen && ball.Green)
             {
+                gameManager.PlaySoundFx();
                 ScorePoint.SetActive(true);
                 gameManager.score++;
             }

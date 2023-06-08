@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
     public void PlaySoundFx()
     {
         int randomsound = Random.Range(0, clipFx.Length);
-        soundFx.clip = clipFx[randomsound];
+        soundFx.PlayOneShot(clipFx[randomsound]);
     }
 
 
