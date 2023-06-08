@@ -14,25 +14,36 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI Score;
     public GameObject ScoreText;
 
-
+    [Space(10)]
+    [Header("Bool")]
     public bool PlayerActive;
     public bool GameFinish;
 
 
+    [Space(10)]
+    [Header("score")]
     public int score = 0;
 
+    [Space(10)]
     [Header("Timer")]
     public float timeValue = 90;
 
+    [Space(10)]
     [Header("FinishGame")]
-
     public GameObject FinishPanelWin;
     public GameObject FinishPanelLoss;
 
 
+
+    [Space(10)]
+    [Header("Sound")]
+    public AudioSource soundFx;
+    public AudioClip[] clipFx;
+
     // Start is called before the first frame update
     void Awake()
     {
+        Time.timeScale = 1;
         Score.text = score.ToString();
         int randomSpawn = Random.Range(0, Spawnpoint.Length);
         Instantiate(Player, Spawnpoint[randomSpawn].position, Quaternion.identity);
@@ -105,6 +116,16 @@ public class GameManager : MonoBehaviour
 
         Timer.text = string.Format("{0:00}:{1:00}", minutes, secondes);
     }
+
+
+    public void PlaySoundFx()
+    {
+        int randomsound = Random.Range(0, clipFx.Length);
+        soundFx.clip = clipFx[randomsound];
+    }
+
+
+
 
     public void ResterGame()
     {

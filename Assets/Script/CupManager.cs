@@ -49,7 +49,7 @@ public class CupManager : MonoBehaviour
             else
             {
                 gameManager.score--;
-                ScorePoint.SetActive(true);
+                ScorePoint.SetActive(false);
                 CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, .1f);
             }
         }
