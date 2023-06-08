@@ -3,9 +3,9 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
     [Header("Parameter")]
-    public float speed = 5f; // Vitesse de déplacement horizontal de la balle
-    public float fallSpeed = 2f; // Vitesse de chute de la balle
-    public float gravityScale = 1f; // Échelle de gravité personnalisée
+    public float speed = 5f; 
+    public float fallSpeed = 2f; 
+    public float gravityScale = 1f; 
 
     [Space(10)]
     [Header("Bool")]
@@ -24,17 +24,17 @@ public class BallController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.gravityScale = gravityScale; // Applique l'échelle de gravité personnalisée
+        rb.gravityScale = gravityScale; 
         ChangeColor();
     }
 
     private void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal"); // Récupère l'entrée horizontale (axe X)
+        float moveHorizontal = Input.GetAxis("Horizontal"); 
 
-        Vector2 movement = new Vector2(moveHorizontal * speed, -fallSpeed); // Crée un vecteur de mouvement en fonction de l'entrée
+        Vector2 movement = new Vector2(moveHorizontal * speed, -fallSpeed); 
 
-        rb.velocity = movement; // Applique la vitesse de déplacement à la balle
+        rb.velocity = movement;
     }
 
     void ChangeColor()
